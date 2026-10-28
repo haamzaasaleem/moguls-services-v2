@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grocery and CPG Fulfillment | Marketplace Moguls Services</title>
+<meta name="description" content="Expiry date checks at receiving, lot tracking, oldest stock ships first and expiry alerts at 90, 60 and 30 days.">
+<script>try{if(sessionStorage.getItem("mm_seen"))document.documentElement.classList.add("no-loader")}catch(e){}</script>
+<noscript><style>.loader{display:none}</style></noscript>
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="loader" id="loader" role="status" aria-label="Loading">
+  <div class="loader-inner">
+    <svg class="crane" viewBox="0 0 480 320" aria-hidden="true">
+      <defs>
+        <linearGradient id="ldWall" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f0ebd6"/><stop offset="1" stop-color="#fcf9ea"/>
+        </linearGradient>
+        <linearGradient id="ldFloor" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#e5ddbb"/><stop offset="1" stop-color="#f1ecd9"/>
+        </linearGradient>
+        <linearGradient id="ldGirder" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#d5ae58"/><stop offset=".45" stop-color="#b8892d"/><stop offset="1" stop-color="#785c1e"/>
+        </linearGradient>
+        <linearGradient id="ldSteel" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#0b1630"/><stop offset=".35" stop-color="#39486e"/><stop offset=".6" stop-color="#1b2a51"/><stop offset="1" stop-color="#0b1630"/>
+        </linearGradient>
+        <linearGradient id="ldBody" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#3a4a72"/><stop offset="1" stop-color="#111b34"/>
+        </linearGradient>
+        <linearGradient id="ldDrum" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#909ab5"/><stop offset=".5" stop-color="#d3d7e1"/><stop offset="1" stop-color="#4f6398"/>
+        </linearGradient>
+        <linearGradient id="ldRope" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#15213f"/><stop offset=".5" stop-color="#7c88a7"/><stop offset="1" stop-color="#15213f"/>
+        </linearGradient>
+        <linearGradient id="ldKraft" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#d1b16c"/><stop offset="1" stop-color="#b99953"/>
+        </linearGradient>
+        <linearGradient id="ldWood" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#d9c59a"/><stop offset="1" stop-color="#b39e70"/>
+        </linearGradient>
+        <pattern id="ldHazard" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="8" height="8" fill="#0d1c42"/><rect width="4" height="8" fill="#b58a2d"/>
+        </pattern>
+        <pattern id="ldLane" width="12" height="6" patternUnits="userSpaceOnUse" patternTransform="skewX(-40)">
+          <rect width="12" height="6" fill="#f1ecd9"/><rect width="6" height="6" fill="#b8892d"/>
+        </pattern>
+        <filter id="ldBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
+
+        <!-- carton, 66 wide by 48 tall, front face starts at y 8 -->
+        <g id="ldCarton">
+          <polygon points="0,8 10,0 66,0 56,8" fill="#e0c385"/>
+          <polygon points="56,8 66,0 66,40 56,48" fill="#a38545"/>
+          <rect x="0" y="8" width="56" height="40" fill="url(#ldKraft)"/>
+          <polygon points="0,8 10,0 66,0 56,8" fill="none" stroke="#b59755" stroke-width=".6"/>
+          <line x1="0" y1="27" x2="56" y2="27" stroke="#a98b4b" stroke-width=".5" opacity=".5"/>
+          <polygon points="24,8 34,0 40,0 30,8" fill="#e9d4a7" opacity=".9"/>
+          <rect x="24" y="8" width="6" height="12" fill="#e9d4a7" opacity=".9"/>
+          <rect x="5" y="30" width="18" height="13" fill="#fdfdfa"/>
+          <rect x="5" y="30" width="18" height="3" fill="#b8892d"/>
+          <path d="M7 36v5M8.5 36v5M10.5 36v5M11.5 36v5M13.5 36v5M15 36v5M16 36v5M18 36v5M19.5 36v5M21 36v5" stroke="#0d1c42" stroke-width=".7"/>
+          <path d="M40 38l4 -4 4 4M44 34v8" stroke="#7d642e" stroke-width="1" fill="none" opacity=".7"/>
+        </g>
+        <g id="ldPallet">
+          <rect x="0" y="0" width="76" height="3" fill="url(#ldWood)"/>
+          <rect x="0" y="3" width="6" height="6" fill="#a89263"/>
+          <rect x="35" y="3" width="6" height="6" fill="#a89263"/>
+          <rect x="70" y="3" width="6" height="6" fill="#a89263"/>
+          <rect x="0" y="9" width="76" height="3" fill="#bfaa7c"/>
+          <path d="M12 0v3M24 0v3M48 0v3M60 0v3" stroke="#9b865a" stroke-width=".8"/>
+        </g>
+      </defs>
+
+      <!-- building -->
+      <rect width="480" height="282" fill="url(#ldWall)"/>
+      <g opacity=".55">
+        <g fill="#d5ceb2">
+          <rect x="150" y="96" width="5" height="186"/><rect x="236" y="96" width="5" height="186"/><rect x="322" y="96" width="5" height="186"/>
+        </g>
+        <g fill="#d9b465">
+          <rect x="150" y="150" width="177" height="4"/><rect x="150" y="212" width="177" height="4"/>
+        </g>
+        <g fill="#dcceb0">
+          <rect x="162" y="128" width="30" height="22"/><rect x="196" y="134" width="28" height="16"/><rect x="250" y="126" width="34" height="24"/><rect x="290" y="132" width="26" height="18"/>
+          <rect x="164" y="190" width="34" height="22"/><rect x="204" y="194" width="24" height="18"/><rect x="254" y="188" width="28" height="24"/>
+        </g>
+      </g>
+      <rect y="281" width="480" height="39" fill="url(#ldFloor)"/>
+      <rect y="280" width="480" height="2" fill="#ccc4a1"/>
+      <rect x="0" y="300" width="480" height="5" fill="url(#ldLane)" opacity=".8"/>
+      <path d="M80 282L56 320M200 282L196 320M320 282L334 320M440 282L470 320" stroke="#cdc5b3" stroke-width="1"/>
+
+      <!-- columns and runway -->
+      <g>
+        <rect x="24" y="44" width="16" height="238" fill="url(#ldSteel)"/>
+        <rect x="440" y="44" width="16" height="238" fill="url(#ldSteel)"/>
+        <rect x="18" y="276" width="28" height="6" fill="#15213f"/>
+        <rect x="434" y="276" width="28" height="6" fill="#15213f"/>
+        <rect x="24" y="250" width="16" height="26" fill="url(#ldHazard)"/>
+        <rect x="440" y="250" width="16" height="26" fill="url(#ldHazard)"/>
+      </g>
+      <!-- end trucks -->
+      <rect x="16" y="26" width="34" height="14" rx="2" fill="#182547"/>
+      <rect x="430" y="26" width="34" height="14" rx="2" fill="#182547"/>
+      <circle cx="24" cy="42" r="4" fill="#081023"/><circle cx="42" cy="42" r="4" fill="#081023"/>
+      <circle cx="438" cy="42" r="4" fill="#081023"/><circle cx="456" cy="42" r="4" fill="#081023"/>
+      <!-- bridge girder -->
+      <rect x="20" y="34" width="440" height="4" fill="#564216"/>
+      <rect x="20" y="38" width="440" height="20" fill="url(#ldGirder)"/>
+      <rect x="20" y="58" width="440" height="4" fill="#443411"/>
+      <g fill="#443411" opacity=".55">
+        <circle cx="34" cy="48" r="1.2"/><circle cx="446" cy="48" r="1.2"/>
+        <rect x="88" y="38" width="2" height="20"/><rect x="156" y="38" width="2" height="20"/><rect x="224" y="38" width="2" height="20"/><rect x="292" y="38" width="2" height="20"/><rect x="360" y="38" width="2" height="20"/>
+      </g>
+      <rect x="228" y="42" width="34" height="12" fill="#fdfdfa"/>
+      <text x="245" y="51.5" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" font-weight="600" fill="#0d1c42">5 TON</text>
+
+      <!-- the box waiting to be picked, and the one just delivered -->
+      <ellipse cx="110" cy="281" rx="42" ry="4" fill="#000000" opacity=".18" filter="url(#ldBlur)"/>
+      <use href="#ldPallet" x="72" y="268"/>
+      <use class="ld-pick" href="#ldCarton" x="82" y="220"/>
+      <ellipse cx="370" cy="281" rx="42" ry="4" fill="#000000" opacity=".18" filter="url(#ldBlur)"/>
+      <use href="#ldPallet" x="332" y="268"/>
+      <use class="ld-drop" href="#ldCarton" x="342" y="220"/>
+
+      <!-- trolley, ropes and load: everything that travels along the girder -->
+      <g class="ld-x">
+        <g transform="translate(110 0)">
+          <ellipse class="ld-shadow" cx="0" cy="281" rx="30" ry="3.5" fill="#000000" filter="url(#ldBlur)"/>
+          <circle cx="-16" cy="64" r="4" fill="#081023"/><circle cx="16" cy="64" r="4" fill="#081023"/>
+          <rect x="-26" y="66" width="52" height="20" rx="2" fill="url(#ldBody)"/>
+          <rect x="-34" y="69" width="10" height="13" rx="2" fill="#1e2f59"/>
+          <rect x="-12" y="70" width="24" height="12" rx="6" fill="url(#ldDrum)"/>
+          <path d="M-8 70v12M-4 70v12M0 70v12M4 70v12M8 70v12" stroke="#455786" stroke-width=".7"/>
+          <circle cx="20" cy="71" r="2" fill="#b58a2d"/>
+          <g transform="translate(0 86)">
+            <g class="ld-rope">
+              <rect x="-4" y="0" width="1.6" height="100" fill="url(#ldRope)"/>
+              <rect x="2.4" y="0" width="1.6" height="100" fill="url(#ldRope)"/>
+            </g>
+            <g class="ld-y">
+              <g class="ld-sway">
+                <rect x="-10" y="0" width="20" height="20" rx="3" fill="url(#ldHazard)"/>
+                <circle cx="0" cy="8" r="5" fill="#1e2f59" stroke="#081023" stroke-width="1"/>
+                <rect x="-2" y="20" width="4" height="6" fill="#0d1c42"/>
+                <path d="M0 26v6a6 6 0 1 1 -6 6" fill="none" stroke="#0d1c42" stroke-width="3.5" stroke-linecap="round"/>
+                <g class="ld-carry">
+                  <path d="M-1 32L-21 55M1 32L33 52" stroke="#38476e" stroke-width="1.6" stroke-dasharray="3 1.6"/>
+                  <use href="#ldCarton" x="-28" y="50"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <img class="loader-logo" src="assets/img/logo.png" alt="" width="1000" height="315">
+    <div class="loader-bar"><span></span></div>
+  </div>
+</div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="topbar">
+  <div class="wrap">
+    <span>Ships within <b>24 hours</b> of delivery to our dock</span>
+    <span class="hide-sm">First month of storage <b>free</b></span>
+    <span class="hide-sm">Bolingbrook, IL</span>
+  </div>
+</div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="Marketplace Moguls Services" width="1000" height="315"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services and Pricing</a>
+      <a href="bundles.html">Variety Packs</a>
+      <a href="grocery.html" aria-current="page">Grocery and CPG</a>
+      <a href="calculator.html">Cost Calculator</a>
+      <a href="quote.html">Contact</a>
+      <a class="btn orange header-cta" href="quote.html">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <div>
+      <div class="tag">Grocery and CPG</div>
+      <h1>Built for food and consumables.</h1>
+      <p class="lead">We track expiration dates and lot numbers and ship the oldest stock first.</p>
+      <div class="btn-row"><a class="btn orange" href="quote.html">Get a Quote</a></div>
+    </div>
+    <div class="tilt" data-tilt="5">
+      <div class="tag">One SKU, one lane, oldest at the front</div>
+      <div class="fifo" aria-label="Cartons sorted by expiration date, earliest first">
+        <div>EXP<br>MAR 27<br>Ships first</div>
+        <div>EXP<br>MAY 27</div>
+        <div>EXP<br>AUG 27</div>
+        <div>EXP<br>NOV 27</div>
+      </div>
+      <p class="fine">Every pick pulls the carton with the closest date, so nothing ages out on the shelf.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <h2 class="reveal">How we handle consumables</h2>
+      <p class="muted reveal" style="font-size:19px">Amazon and Walmart both reject food that arrives too close to its date. These are the checks that keep yours moving.</p>
+    </div>
+    <ul class="checks reveal">
+      <li><b>Expiry date check at receiving</b><span>Dates are read and recorded on every carton the day it arrives.</span></li>
+      <li><b>Lot tracking</b><span>Each lot number is logged, so a recall or a buyer question can be traced to the exact units.</span></li>
+      <li><b>Oldest stock ships first</b><span>Picks always pull the earliest date on hand.</span></li>
+      <li><b>Variety pack building</b><span>Snack boxes, sampler packs and multipacks built from your single items. <a href="bundles.html">See bundle pricing</a></span></li>
+      <li><b>Expiry alerts by message</b><span>We message you at 90, 60 and 30 days before stock expires.</span></li>
+      <li><b>Photos of received cartons</b><span>You see what arrived, and what condition it arrived in, before anything ships.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band-paper2">
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="tag">Expiry alerts</div>
+      <h2>Three heads up messages, not one surprise.</h2>
+      <p class="muted">Time to run a promotion, move units to another channel or plan a removal while the stock still has value.</p>
+    </div>
+    <div class="expiry reveal">
+      <div><div class="d">90</div><small>days out</small><p>First notice with units and lot numbers.</p></div>
+      <div><div class="d">60</div><small>days out</small><p>Second notice with what is left.</p></div>
+      <div><div class="d">30</div><small>days out</small><p>Final notice. Time to act.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2>Selling food, snacks or supplements?</h2>
+      <p>Tell us your SKU count and how fast it sells.</p>
+    </div>
+    <a class="btn" href="quote.html">Get a Quote</a>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img src="assets/img/logo-light.png" alt="Marketplace Moguls Services" width="1000" height="315" loading="lazy">
+        <p>Prep, storage and fulfillment for Amazon, Walmart and direct to consumer sellers. Items ship within 24 hours of arriving at our warehouse.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="services.html">Services and Pricing</a></li>
+          <li><a href="bundles.html">Variety Pack and Bundle Building</a></li>
+          <li><a href="grocery.html">Grocery and CPG</a></li>
+          <li><a href="calculator.html">Cost Calculator</a></li>
+          <li><a href="quote.html">Get a Quote and Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Warehouse</h4>
+        <ul>
+          <li data-setting="address">161 N Orchard Dr, Bolingbrook, IL 60440, USA</li>
+          <li data-if-setting="phone"><a href="tel:+14073618620" data-setting-href="phone" data-setting="phone">+1 407 361 8620</a></li>
+          <li><a href="mailto:haamzaasaleem@gmail.com" data-setting-href="contactEmail" data-setting="contactEmail">haamzaasaleem@gmail.com</a></li>
+          <li data-if-setting="hours" data-setting="hours"></li>
+        </ul>
+        <p style="margin-top:20px"><a class="btn orange" href="quote.html">Get a Quote</a></p>
+      </div>
+    </div>
+    <div class="base">
+      <span>&copy; <span data-year>2026</span> Marketplace Moguls Services</span>
+      <span>Amazon FBA &middot; Walmart WFS &middot; FBM &middot; 2 step dropshipping</span>
+      <span>Developed by <a href="https://cybersialabs.com" target="_blank" rel="noopener">Cybersialabs.com</a></span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

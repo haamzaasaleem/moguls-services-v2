@@ -1,0 +1,45 @@
+{
+  "fnsku": {
+    "perItem": 0.75,
+    "twoPackAdd": 0.4
+  },
+  "fulfillmentTiers": [
+    { "label": "0 to 50 orders a day", "min": 0, "max": 50, "firstItem": 2.75, "extraItem": 0.5 },
+    { "label": "51 to 100 orders a day", "min": 51, "max": 100, "firstItem": 2.5, "extraItem": 0.5 },
+    { "label": "101 to 500 orders a day", "min": 101, "max": 500, "firstItem": 2.25, "extraItem": 0.4 },
+    { "label": "501 to 1,000 orders a day", "min": 501, "max": 1000, "firstItem": 1.85, "extraItem": 0.3 }
+  ],
+  "bundleBase": {
+    "perPack": 2.5,
+    "note": "Every variety pack has a base price plus a building fee that depends on how many items are in the pack."
+  },
+  "bundleTiers": [
+    { "label": "2 items", "min": 2, "max": 2, "price": 0.9 },
+    { "label": "3 to 4 items", "min": 3, "max": 4, "price": 1.25 },
+    { "label": "5 to 6 items", "min": 5, "max": 6, "price": 1.6 },
+    { "label": "7 or more items", "min": 7, "max": null, "price": null }
+  ],
+  "wfsPrep": {
+    "perItem": 0.75,
+    "unit": "per item",
+    "note": ""
+  },
+  "palletStorage": {
+    "perPalletMonth": 52,
+    "unit": "per pallet per month",
+    "note": "First month of storage is free on every new shipment."
+  },
+  "extraServices": [
+    {
+      "name": "Courier drop off (OnTrac, UPS, FedEx, USPS and others)",
+      "price": null,
+      "unit": "per drop off"
+    }
+  ],
+  "calculator": {
+    "palletUsableCubicInches": 96000,
+    "palletMaxWeightLb": 1500,
+    "oversizeWeightLb": 50,
+    "oversizeLongestSideIn": 25
+  }
+}
